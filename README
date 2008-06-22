@@ -1,0 +1,23 @@
+Introduction
+============
+
+A script that takes another script as a command line argument, runs that
+script, and logs detailed runtime information to ~/.tattletale_history.
+
+Examples
+========
+
+./tattletale ls -al
+./tattletale ~/some/script
+
+This is can be useful for testing cron jobs that aren't doing what you'd 
+like them to do.  For example, let's say you have a cronjob specified as:
+
+0 5 * * * /var/www/example.com/current/script/cron/somescript.rb
+
+To enable tattletale logging, change this line to:
+
+0 5 * * * /usr/local/bin/tattletale.rb /var/www/example.com/current/script/cron/somescript.rb
+
+Then, you can find the logs of runtime information in the .tattletale_history
+directory in the home directory of the user who owns the crontab.

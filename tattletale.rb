@@ -1,15 +1,6 @@
 #!/usr/bin/env ruby
 
 # Copyright (c) 2008 Alan Norbauer <altano@gmail.com>
-# Code licensed under The MIT License, found at http://www.opensource.org/licenses/mit-license.html
-
-# A script that takes another script as a command line argument, runs that
-# script, and logs runtime information to ~/.tattletale_history (useful for
-# testing cron jobs by specifying tattletale.rb instead of the cron script.)
-
-# Examples:
-# ./tattletale ls -al
-# ./tattletale ~/some/script
 
 require 'pp'
 require 'stringio'
@@ -18,7 +9,7 @@ require 'tempfile'
 
 # This makes it possible to capture stdout, stderr, and exitstatus of an
 # external command.  (Note that this is heavily modified from the original)
-# Thanks to Ara.T.Howard <ara.t.howard noaa.gov>
+# Thanks to Ara.T.Howard <ara [dot] t [dot] howard [at] noaa [dot] gov>
 # http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/167206
 class Redirector
   include Singleton
